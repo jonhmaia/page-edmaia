@@ -1,0 +1,69 @@
+.Slide-Card {
+  display: block;
+  height: 15em;
+  width: 100%;
+  margin-bottom: 1em;
+  position: relative;
+  overflow: hidden;
+}
+.Slide-Card:hover .Slide-Card__img, .Slide-Card:hover .Slide-Card__title, .Slide-Card:hover .Slide-Card__descr {
+  transition: 0.5s;
+}
+.Slide-Card:hover .Slide-Card__img {
+  position: absolute;
+  top: -4em;
+}
+.Slide-Card:hover .Slide-Card__title {
+  position: absolute;
+  bottom: -40%;
+}
+.Slide-Card:hover .Slide-Card__descr {
+  position: absolute;
+  bottom: 0;
+}
+
+.Slide-Card__img {
+  transition: 0.5s;
+  position: absolute;
+  top: -10%;
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  min-height: 130%;
+  min-width: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+  z-index: 0;
+}
+.Slide-Card__img::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.Slide-Card__title,
+.Slide-Card__descr {
+  transition: 0.5s;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Slide-Card__title {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.Slide-Card__descr {
+  position: absolute;
+  bottom: 100%;
+  height: 15em;
+  width: 100%;
+  padding: 1em;
+}
