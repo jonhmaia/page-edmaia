@@ -1,386 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .header {
-      background-color: black;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #C8B057;
-    }
-
-    .header img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-right: 20px;
-    }
-
-    .header-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header h1 {
-      margin-top: 5px;
-      font-size: 24px;
-      color: #C8B057;
-    }
-
-    .header h2 {
-      margin: 5px 0;
-      font-size: 18px;
-      margin-left: -11px;
-      color: #C8B057;
-    }
-
-    .header-icons {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-top: 10px;
-    }
-
-    .header-icons h2 {
-      font-size: 16px;
-      color: #C8B057;
-      margin-bottom: 10px;
-    }
-
-    .header-icons a {
-      color: #C8B057;
-      text-decoration: none;
-      margin-top: 5px;
-      font-size: 18px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .container img {
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 15px;
-    }
-
-    .section-header {
-      text-align: left;
-      width: 100%;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #C8B057;
-      padding: 10px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      color: #C8B057;
-      margin-bottom: 12px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      margin-bottom: 20px;
-      width: 100%;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #000000;
-    }
-
-    .card-description {
-      font-size: 16px;
-      color: #000000;
-      line-height: 1.6;
-    }
-
-    @media (min-width: 768px) {
-      .header h1 {
-        font-size: 32px;
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #000000;
+        margin: 0;
+        padding: 0;
+        color: #333;
       }
 
-      .header h2 {
-        font-size: 24px;
-      }
-
-      .section-title {
-        font-size: 36px;
-      }
-
-      .card {
-        display: flex;
-        align-items: stretch;
-      }
-
-      .card-content {
-        flex: 1;
-      }
-    }
-
-    @media (max-width: 767px) {
       .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+        background-color: #000;
+        color: #000000;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 10px 2px 10px rgba(255, 255, 255, 0.1);
       }
 
-      .header img {
-        margin-bottom: 10px;
+     
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .header h1 {
-        font-size: 24px;
+        margin: 0;
+        font-size: 28px;
+        color: #fdfdfd;
       }
 
       .header h2 {
+        margin: 0;
         font-size: 18px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .card-content {
-        padding: 10px;
+        color: #fdfdfd;
       }
 
       .header-icons {
-        align-items: flex-start;
-        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+       
       }
-    }
-    .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Espaço entre os cards */
-  justify-content: center; /* Centraliza os cards no container */
-}
 
-.card-half {
-  flex: 1 1 calc(50% - 20px); /* Cada card ocupa 50% da largura disponível menos o espaço entre eles */
-  max-width: calc(50% - 20px); /* Limita a largura máxima para 50% menos o espaço entre eles */
-  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
-}
+      .header-icons a {
+        color: #fdfdfd;
+        text-decoration: none;
+        margin: 5px 0;
+        font-size: 18px;
+    
+      }
 
-@media (max-width: 767px) {
-  .card-half {
-    flex: 1 1 100%; /* Em telas menores, cada card ocupa 100% da largura */
-    max-width: 100%; /* Limita a largura máxima para 100% */
-  }
-}
-.footer {
-  background-color: black;
-  color: #C8B057;
-  padding: 40px 20px;  /* Adicionei padding à esquerda e direita */
-  text-align: center;
-  font-family: Arial, sans-serif;
-  border-top: 1px solid #C8B057;
-}
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
+      .section-header {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #fdfdfd;
+        padding: 10px 0;
+      }
 
-.footer-section {
-  flex: 1;
-  padding: 20px;
-  text-align: left;  /* Alinhamento à esquerda para o conteúdo */
-}
+      .section-title {
+        font-size: 32px;
+        color: #fdfdfd;
+        margin: 0;
+      }
 
-.footer-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+      .about-me {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
 
-.footer-section p,
-.footer-section a {
-  font-size: 16px;
-  color: #C8B057;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
+      .about-me img {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
 
-.footer-section a:hover {
-  color: #fff;
-}
+      .about-me-text {
+        flex: 1;
+        font-size: 16px;
+        color: #f8f8f8;
+        line-height: 1.6;
+      }
 
-.footer-section .social-icon {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 24px;
-}
+      .card {
+        background-color: #000000;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+      }
 
-.footer-bottom {
-  background-color: black;
-  color: #C8B057;
-  padding: 20px 0;
-  text-align: center;
-  border-top: 1px solid #C8B057;
-  margin-top: 20px;
-}
+      .card-title {
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
 
-@media (max-width: 767px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: left;
-  }
+      .card-description {
+        font-size: 16px;
+        color: #f7f7f7;
+        line-height: 1.6;
+      }
 
-  .footer-section {
-    padding: 10px 20px; /* Ajuste de padding para telas menores */
-  }
-}
+      @media (min-width: 768px) {
+        .header h1 {
+          font-size: 36px;
+        }
 
-  </style>
-</head>
+        .header h2 {
+          font-size: 24px;
+        }
 
-<body>
+        .section-title {
+          font-size: 36px;
+        }
 
-  <div class="header">
-    <div>
+        .card {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .header-content {
+          align-items: center;
+        }
+
+        .header-icons {
+          align-items: center;
+        }
+
+        .header-icons a {
+          font-size: 16px;
+        }
+
+        .about-me {
+          flex-direction: column;
+        }
+
+        .about-me img {
+          margin: 20px 0;
+        }
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .card-half {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+
+      @media (max-width: 767px) {
+        .card-half {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      .footer {
+        background-color: #000;
+        color: #fdfdfd;
+        padding: 40px 20px;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        border-top: 3px solid #fdfdfd;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+
+      .footer-section {
+        flex: 1;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .footer-section h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        font-size: 16px;
+        color: #fdfdfd;
+        text-decoration: none;
+        margin-bottom: 10px;
+      }
+
+      .footer-section a:hover {
+        color: #ffffff;
+      }
+
+      .footer-section .social-icon {
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+
+      .footer-bottom {
+        background-color: #000;
+        color: #fdfdfd;
+        padding: 20px 0;
+        text-align: center;
+        border-top: 3px solid #fdfdfd;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 767px) {
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-section {
+          padding: 10px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div class="header">
       <div class="header-content">
-        <h1><img src="logomarca.png" alt="logo"> Ed da Silva Maia</h1>
+        <h1>Ed da Silva Maia</h1>
         <h2>Advogado</h2>
+        
+      </div>
+      <div class="header-icons">
+        <h2>Contato</h2>
+        <a
+          href="https://api.whatsapp.com/send?phone=556299400155"
+          target="_blank"
+          >WhatsApp <i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="mailto:advedmaia@gmail.com"
+          >Email <i class="far fa-envelope"></i
+        ></a>
       </div>
     </div>
-    <div class="header-icons">
-      <h2>Clique para entrar em contato</h2>
-      <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_TELEFONE" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:seuemail@example.com">Email <i class="far fa-envelope"></i></a>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Sobre Mim</h2>
-    </div>
-    <img src="foto de perfil.jpg" alt="logo">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sobre Mim</h2>
+      </div>
     <div class="card">
-      <div class="card-content">
-        <p class="card-description">Graduado em Direito pela Universidade do Rio dos Sinos - Unisinos São Leopoldo/RS.<br>
-          Pós graduado em Direito Processual Civil - Goiânia.<br>
-          Procurador Geral do Município de Parintins -AM no perído de 2014 a 2018
-        </p>
+      <div class="about-me">
+        <img src="foto de perfil.jpg" alt="foto de perfil" style="filter: grayscale();" />
+        <div class="about-me-text">
+          <p>
+            Advogado atuante especialista em Processos junto aos juízos e
+            tribunais, 25 anos de experiência no trato e nas relações pessoais
+            dos clientes e nas Ações judiciais, comprometido com os interesses
+            do bem comum e a justiça no patrocínio ou defesa da pessoa humana.<br />
+           <b>Graduado em Direito pela Universidade do Rio dos Sinos - Unisinos
+            São Leopoldo/RS.<br />
+            Pós graduado em Direito Processual Civil - Goiânia.<br />
+            Procurador Geral do Município de Parintins -AM no perído de 2014 a
+            2018</b> 
+          </p>
+        </div>
+       
+      </div>
+    </div>
+      <div class="section-header">
+        <h2 class="section-title">Serviços Jurídicos</h2>
+      </div>
+      <div class="card">
+        <div class="cards-container">
+          <div class="card card-half">
+            <img src="estatua.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <div class="card-content">
+              <h3 class="card-title"><b>Assessoria</b></h3>
+              <p class="card-description">
+                
+Ofereço assessoria jurídica no patrocínio ou defesas em diversas áreas do direito
+              </p>
+            </div>
+          </div>
+          <div class="cards-container">
+            <div class="card card-half">
+              <img src="https://bicalho.com/wp-content/uploads/2022/09/Assessoria-Juridica-Preventiva.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+              <div class="card-content">
+                <h3 class="card-title"><b>Consultoria</b></h3>
+                <p class="card-description">
+                  Consultas e esclarecimentos para particulares e empresas, visando soluções de conflitos, interesses e conhecimento dos problemas a se enfrentar, abrangendo as áreas sensíveis da vida e a aplicação do direito.
+                </p>
+              </div>
+            </div>
+      
+
+      <div class="section-header">
+        <h2 class="section-title">Áreas de Atuação</h2>
+      </div>
+      <div class="cards-container">
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Civil</b></h3>
+            <img src="direitocivil.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <p class="card-description">
+              Família e Sucessões, Direito Agrário, Contratos, Posse, propriedade e usucapião, Inventário. Relações interpessoais. Separações, guardas e pensão de alimentos
+            </p>
+          </div>
+        </div>
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Penal</b></h3>
+            <img src="direitopenal.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <p class="card-description">
+              Representamos clientes em defesa criminal em Crimes Comuns, Crimes Ambientais, Crimes de Informática, Lei Maria da Penha, Assessoria à vítimas de ilícitos penais. Habeas Corpos, Relaxamento de prisão, Revogação de Preventiva e medidas cautelares.
+            </p>
+          </div>
+        </div>
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Digital</b></h3>
+            <img src="digital.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <p class="card-description">
+              Consultoria e assessoria à empresas, LGPD (Lei Geral de Proteção de Dados). Desenvolvedores de software, usuários e provedores de Internet. Questões jurídicas das Startups nos contratos, proteção intelectual e direitos e obrigações.
+            </p>
+          </div>
+        </div>
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Empresarial</b></h3>
+            <img src="empresarial.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%); ">
+            <p class="card-description">
+              Livre iniciativa, Parte social da empresa, Liberdade de concorrência. Defesa do meio ambiente. Princípio de preservação da empresa. Sociedade e responsabilidade. Defesa do consumidor. Autonomia patrimonial. Startup formação e formulação contratual. Abertura de Pessoas Jurídicas de qualquer natureza
+            </p>
+          </div>
+        </div>
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Imobiliário</b></h3>
+            <img src="imobile.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <p class="card-description">
+              Em relação à propriedade de bens imóveis: Compra, Venda, transferência de propriedade, usucapião, registro, locação e o direito de construir.
+            </p>
+          </div>
+        </div>
+        <div class="card card-half">
+          <div class="card-content">
+            <h3 class="card-title"><b>Direito Processual Civil</b></h3>
+            <img src="processualcivil.jpg" alt="Assessoria Jurídica" style="border-radius: 10px; filter:blur(5px); margin-bottom: 5px; filter: grayscale(100%);">
+            <p class="card-description">
+              Patrocínio e ou defesa de causas judicializadas, nos juízos de primeiro grau, segundo e tribunais superiores, e atuação em acordos, área administrativa e extrajudiciais
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="section-header">
-      <h2 class="section-title">Serviços Jurídicos</h2>
-    </div>
-    <div class="card">
-      <div class="card-content">
-        <h3 class="card-title"><b>Consultoria Jurídica</b></h3>
-        <p class="card-description">Oferecemos consultoria jurídica especializada para empresas e indivíduos, abrangendo diversas áreas do direito civil e empresarial. Lorem ipsum dolor sit amet. Aut suscipit amet aut molestiae dolores sed eveniet nesciunt nam facilis sint. Aut asperiores amet et recusandae voluptates sed aspernatur adipisci. Et incidunt consequatur est voluptatem quae aut officiis ducimus est architecto reprehenderit ut officia rerum sed omnis quibusdam in quia odit. Ut dolor praesentium ab vitae quae ut iste totam et itaque tenetur et quia illo sit temporibus commodi. Sed similique reprehenderit ex quisquam quidem et molestiae accusantium ab consequatur porro? Ab obcaecati quia hic galisum galisum sit deleniti quidem quo asperiores vitae At earum quaerat et consectetur impedit! Eos aliquid quibusdam et quibusdam placeat At officia aspernatur ut explicabo nesciunt et omnis dolores ut modi dolores. Sit voluptatem odit et autem aliquid et voluptas magni!</p>
-      </div>
-    </div>
-
-    <div class="section-header">
-      <h2 class="section-title">Áreas de atuação</h2>
-    </div>
-    <div class="card">
-      <div class="card-content">
-        <h3 class="card-title"><b>Consultoria Jurídica</b></h3>
-        <p class="card-description">Oferecemos consultoria jurídica especializada para empresas e indivíduos, abrangendo diversas áreas do direito civil e empresarial. Lorem ipsum dolor sit amet. Aut suscipit amet aut molestiae dolores sed eveniet nesciunt nam facilis sint. Aut asperiores amet et recusandae voluptates sed aspernatur adipisci. Et incidunt consequatur est voluptatem quae aut officiis ducimus est architecto reprehenderit ut officia rerum sed omnis quibusdam in quia odit. Ut dolor praesentium ab vitae quae ut iste totam et itaque tenetur et quia illo sit temporibus commodi.</p>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Áreas de Atuação</h2>
-    </div>
-    <div class="cards-container">
-      <div class="card card-half">
-        <div class="card-content">
-          <h3 class="card-title"><b>Direito Civil</b></h3>
-          <p class="card-description">Especializados em casos que envolvem disputas civis e direito de família.</p>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h3>Sobre Mim</h3>
+          <p>
+            Ed da Silva Maia - Advogado especializado em diversas áreas do
+            direito, pronto para fornecer assessoria jurídica personalizada.
+          </p>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contato</h3>
+          <p><i class="fas fa-phone-alt"></i> +55 62 9940-0155</p>
+          <p><i class="fas fa-envelope"></i> advedmaia@gmail.com</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Goiânia, Goiás
+          </p>
+        </div>
+        <div class="footer-section social">
+          <h3>Siga-nos</h3>
+          <a href="https://www.instagram.com/souedmaia/?utm_source=qr&amp;igsh=MWZoc28zNmhvaTkwdQ%3D%3D" class="social-icon"><i class="fab fa-instagram"></i> souedmaia</a>
         </div>
       </div>
-      <div class="card card-half">
-        <div class="card-content">
-          <h3 class="card-title"><b>Direito Penal</b></h3>
-          <p class="card-description">Representamos clientes em processos criminais e oferecemos defesa em investigações.</p>
-        </div>
+      <div class="footer-bottom">
+        &copy; 2024 Ed da Silva Maia. Todos os direitos reservados.
       </div>
-      <div class="card card-half">
-        <div class="card-content">
-          <h3 class="card-title"><b>Direito Trabalhista</b></h3>
-          <p class="card-description">Consultoria em questões trabalhistas e representação em disputas de emprego.</p>
-        </div>
-      </div>
-      <div class="card card-half">
-        <div class="card-content">
-          <h3 class="card-title"><b>Direito Empresarial</b></h3>
-          <p class="card-description">Assessoria jurídica para empresas, desde a formação até questões contratuais.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section about">
-        <h3>Sobre Nós</h3>
-        <p>Ed da Silva Maia - Advogado especializado em diversas áreas do direito, pronto para fornecer assessoria jurídica personalizada.</p>
-      </div>
-      <div class="footer-section contact">
-        <h3>Contato</h3>
-        <p><i class="fas fa-phone-alt"></i> +55 21 1234-5678</p>
-        <p><i class="fas fa-envelope"></i> seuemail@example.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Endereço, Cidade, Estado, CEP</p>
-      </div>
-      <div class="footer-section social">
-        <h3>Siga-nos</h3>
-        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2024 Ed da Silva Maia. Todos os direitos reservados.
-    </div>
-  </footer>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-</body>
-
+    </footer>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  </body>
 </html>
